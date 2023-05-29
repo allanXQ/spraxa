@@ -69,7 +69,9 @@ const Jobs = () => {
                                     : ''
                                 }
                             </Box>
-                            <Box style={{display:'flex', justifyContent:'space-between'}}>
+                            <Box sx={{display:'flex', flexDirection: { xs: 'column', md: 'row' },
+
+                             justifyContent:'space-between'}}>
                                 <Box sx={{display:'flex', gap:2}}>
                                     <WorkHistoryIcon />
                                     <Typography variant="body1">{job.requirements}</Typography>

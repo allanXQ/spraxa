@@ -37,7 +37,16 @@ const  Testimonials = () => {
     return (
       <Grid container style={{display:'flex',flexDirection:"column", justifyContent:'center', alignItems:'center', gap:20}}>
           <Grid item >
-              <SectionHeader title='Testimonials' subtitle='What our clients say about us' />
+              <SectionHeader title='Testimonials'/>
+          </Grid>
+          <Grid item style={{display:"flex", flexDirection:'column', alignItems:'center'}}>
+            <Typography>
+                If you need any IT solution we are available for you. 
+                As an IT solution provider company, we are committed to deliver the best technology solutions to our clients.
+            </Typography>
+            <Typography style={{fontWeight:"bold", color:"#0fac7d"}}>
+                Here is what our clients say about us
+            </Typography>
           </Grid>
           <Grid item sx={{display:'flex', flexWrap:'wrap',
             flexDirection: { xs: 'column', md: 'row' },
@@ -55,6 +64,8 @@ const  Testimonials = () => {
                             subtitle={testimonial.title}
                             description={testimonial.description}
                             readMore={false}
+                            bgColor='#0fac7d'
+                            color='white'
                         >
                         </VrCard>
                     ))

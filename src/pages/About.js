@@ -11,18 +11,16 @@ const About = () => {
             image: 'yen.png',
             description: "Yen Dutt Jain started working with Spraxa Solutions Pvt. Ltd. in its hardware division. He was mainly responsible for handling the support business. After departure of Durlabh Jain from Spraxa Solutions, Yen Dutt Jain took upon him to guide Spraxa Solutions Pvt. Ltd. to achieve greater heights in Software Development arena. Being an Ex-Employee of Fujitsu, he brings decades of experience to the company."
         },
-        // { 
-        //     name: 'Durlabh Jain', 
-        //     position: 'MENTOR / GURU', 
-        //     image: 'dj.png',
-        //     description:"Former project manager at Fujitsu managing over 200 people. Scaled software specialist with 30 years of experience."
-        // }
+        { 
+            name: 'Durlabh Jain', 
+            position: 'MENTOR / GURU', 
+            image: 'dj.png',
+            description:"Former project manager at Fujitsu managing over 200 people. Scaled software specialist with 30 years of experience."
+        }
     ]
   return (
-    <>
-        <Header/>
         <Grid container style={{display:'flex', flexDirection:'column',alignItems:'center', justifyContent:'center', gap:20}}>
-            <Grid item style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+            <Grid item xs={12} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
                 <HrCard
                     width={1250}
                     height='auto'
@@ -36,7 +34,7 @@ const About = () => {
                 />
             </Grid>
 
-            {/* <Grid item xs={12} style={{display:'flex',flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+            <Grid item xs={12} style={{display:'flex',flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
                 <Typography variant='h4' style={{fontWeight:'bold'}}>Executive Team</Typography>
                 <Typography variant='body1'>Meet our professional and experienced team!</Typography>
                     <Box sx={(theme)=>({
@@ -51,7 +49,7 @@ const About = () => {
                         {Executives.map(executive => (
                             <VrCard 
                                 key={executive.name}
-                                width={1250}
+                                width={500}
                                 height={700}
                                 title={executive.name}
                                 subtitle={executive.position}
@@ -66,10 +64,10 @@ const About = () => {
                         ))}
                     </Box>
                     
-            </Grid> */}
+            </Grid>
 
-            <Grid item  style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-                {/* <HrCard
+            <Grid item xs={12} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+                <HrCard
                     width={1250}
                     height='auto'
                     title='Our Partners'
@@ -81,28 +79,10 @@ const About = () => {
                     avatar={false}
                     readMore={false}
                     reverse={false}
-                /> */}
-                 {Executives.map(executive => (
-                            <VrCard 
-                                key={executive.name}
-                                width={1250}
-                                height='auto'
-                                title={executive.name}
-                                subtitle={executive.position}
-                                image={executive.image}
-                                imgWidth={100}
-                                imgHeight='auto'
-                                imgPath='about'
-                                description={executive.description}
-                                avatar={false}
-                                readMore={false}
-                            />
-                        ))}
+                />
             </Grid>
-
-        </Grid>
-    </>
-  )
+        </Grid>  
+    )
 }
 
 export default About

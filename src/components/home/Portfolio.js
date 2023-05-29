@@ -1,39 +1,40 @@
-import { Card, CardContent, Typography,Grid } from '@mui/material'
+import { Typography,Grid, Box } from '@mui/material'
 import React from 'react'
+import PortfolioCard from '../Common/PortfolioCard'
 
 const Portfolio = () => {
   const Projects = [
     {
       title:'Spraxa',
-      filename:'spraxa.png'
+      image:'spraxa.png'
     },
     {
       title:'Coolr',
-      filename:'coolr.png'
+      image:'coolr.png'
     },
     {
       title:'Exception Browser',
-      filename:'exceptionbrowser.png'
+      image:'exceptionbrowser.png'
     },
     {
       title:'Kundli',
-      filename:'kundli.png'
+      image:'kundli.png'
     },
     {
       title:'Orflow',
-      filename:'orflow.png'
+      image:'orflow.png'
     },
     {
       title:'Realwave',
-      filename:'realwave.png'
+      image:'realwave.png'
     },
     {
       title:'Tailored Logistics',
-      filename:'tailoredlogistics.png'
+      image:'tailoredlogistics.png'
     },
     {
       title:'Volza',
-      filename:'volza.png'
+      image:'volza.png'
     },
   ]
 
@@ -44,11 +45,7 @@ const Portfolio = () => {
       <Grid item style={{display:"flex", flexDirection:'row', alignItems:'center', justifyContent:'center', flexWrap:"wrap", gap:40}}>
         {
           Projects.map((project, index) => (
-            <Card key={index} style={{display:"flex", flexDirection:'column', gap:40, width:'fit-content'}}>
-              <CardContent style={{display:"flex", flexDirection:'column', gap:40}}>
-                <img src={`/images/portfolio/${project.filename}`} alt={project.title} width={250} style={{}}/>
-              </CardContent>
-            </Card>
+            <PortfolioCard image={project.image} title={project.title}/>
           ))
         }
       </Grid>

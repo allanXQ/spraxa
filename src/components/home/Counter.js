@@ -22,9 +22,10 @@ const Counter = () => {
 
     ]
   return (
-    <Grid container style={{backgroundImage: 'url(/images/statsbg2.jpg)', display:"flex", 
-        justifyContent:'center', alignItems:'center',}}>
-        <Grid item style={{display:"flex", gap:20, justifyContent:'center',
+    <Grid container style={{backgroundImage: 'url(/images/statsbg2.jpg)', 
+    display:"flex", flexWrap:'wrap', justifyContent:'center', alignItems:'center'
+        }}>
+        <Grid item sx={{display:"flex", flexWrap:'wrap' ,flexDirection:{xs:'column', sm:'row'}, gap:5, justifyContent:'center',
          alignItems:'center', backgroundColor:'transparent', margin:'20px 0 20px 0'
          }}>
             {

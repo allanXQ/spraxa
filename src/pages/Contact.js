@@ -5,7 +5,6 @@ import MailIcon from '@mui/icons-material/Mail';
 import facebook from '../images/social/facebook.png'
 import twitter from '../images/social/twitter.png'
 import linkedIn from '../images/social/linkedin.png'
-import Header from '../components/Header';
 
 const Contact = () => {
     const socialIcons = [
@@ -21,16 +20,14 @@ const Contact = () => {
     }
 
   return (
-    <>
-        <Header/>
-        <Grid container style={{paddingTop:20, display:'flex', flexDirection:'column', gap: 20, paddingLeft:50, paddingRight:50}}>
+    <Grid container style={{paddingTop:20, display:'flex', flexDirection:'column', gap: 20, paddingLeft:50, paddingRight:50}}>
         <Grid item xs={12} style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
             <Typography variant="h4">Contact Us</Typography>
             <Typography variant="body1">We are here to help and answer any question you might have. We look forward to hearing from you.</Typography>
         </Grid>
         <Grid item xs={12} style={{display:'flex', gap:20, alignItems:'center'}}>
-            <img src="/images/contactus.jpg" width={800} alt="contact us"/>
-            <Grid container style={{display:'flex', flexDirection:'column', gap:10}}>
+            <img src="/images/contactus1.jpg" width={1000} alt="contact us"/>
+            <Grid container style={{display:'flex', flexDirection:'column', gap:20}}>
                 <Grid item style={CustomContacts}>
                     <PhoneIcon/>
                     <Typography variant="body2">0120-4167004, +91-9354701277 (India), +1-571-346-7306 (US)</Typography>
@@ -56,9 +53,7 @@ const Contact = () => {
             <Typography variant="h5" style={{fontWeight:'bold'}}>Find Us On Google Maps</Typography>
             <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=spraxa%20solutions%20kaushambi%20&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </Grid>
-    </Grid>
-    </>
-    
+</Grid>    
   )
 }
 

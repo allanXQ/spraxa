@@ -6,92 +6,100 @@ import { Box } from '@mui/material'
 const Services = () => {
     const Services = [
         { 
-            title:'Mobile App Development', 
-            description:'The popularity of mobile applications has risen tremendously. With the proliferation of high speed networks, smart phones and coupled with the fact that information',
-            image:'mobileapp.jpg',
+            title:'Mobile Apps', 
+            description: 'Mobile app popularity has surged due to fast networks and the need for on-the-go information. Software companies must have a mobile version to stay competitive. Users crave simplicity and access apps for info, utility, and entertainment.',
+            image:'mobileapp.png',
+            link:"mobileapps",
             readMore: true
         },
         { 
             title:'Web & (UI/UX) Design', 
             description:'In July, 2007, Spraxa Solutions expanded into web-designing sphere designing web-sites, skins, templates, logos designing, marketing material and application layouts',
             image:'uidesign.png',
+            link:'portfolio',
             readMore: true
         },
         { 
             title:'Application Management & Support', 
-            description:'Spraxa Solutions offers comprehensive application lifecycle management services that include maintenance',
+            description:'Spraxa provides end-to-end application lifecycle management, including maintenance, new feature development, and support. We offer flexible pricing options and engagement models with managed services for a comprehensive solution.',
             image:'appmanagement.png',
+            link:'appmanagement',
             readMore: true
         },
         { 
             title:'Platform Solutions', 
-            description:'WordPress base design, development and customization Joomla based design, development, customization and integration',
+            description:'We offer WordPress and Joomla design, development, customization, and integration services. Additionally, we specialize in Microsoft SharePoint deployment, customization, and maintenance, as well as Microsoft SQL Server analysis, database design, optimization, and reporting services.',
             image:'cms.png',
+            link:'platformsolutions',
             readMore: true
         },
         { 
             title:'Technology', 
-            description:'WordPress base design, development and customization Joomla based design, development, customization and integration',
+            description:'Spraxa Solutions offers reliable IT solutions, deploying cutting-edge technology to provide effective strategies for clients. They understand the importance of technology in today\'s business world and strive for innovation in delivering quality services, specializing in mobile and web application development, big data, and open-source platforms.',
             image:'technology.png',
+            link:'technology',
             readMore: true
         },
         { 
             title:'Big Data', 
-            description:'WordPress base design, development and customization Joomla based design, development, customization and integration',
+            description:'InfodriveIndia offers market intelligence for export-import businesses, while Volza provides dashboards with shipment records for business planning. CoolR\'s technology uses machine learning to optimize sales efficiency with detailed analytics.',
             image:'bigdata.png',
+            link:"bigdata",
             readMore: true
         },
         {
             title:'Application Development',
-            description:'Spraxa Solutions offers comprehensive application lifecycle management services that include maintenance, support, re-engineering and testing. Our deep expertise in application development and maintenance enables us to deliver high quality results at a reduced cost. We follow a well-defined and scalable application development process that comprises the following steps:',
+            description:'Mobile app development is the creation of apps for mobile devices like phones or PDAs. They can be pre-installed during manufacturing and are designed for various purposes.',
             image:'appdevelopment.png',
+            link:'appdevelopment',
             readMore: true
         },
         {
             title:'Mobile App Development',
-            description:'The popularity of mobile applications has risen tremendously. With the proliferation of high speed networks, smart phones and coupled with the fact that information is available at the fingertips, mobile applications have become a necessity rather than a luxury. Spraxa Solutions has been at the forefront of mobile application development. We have developed mobile applications for various platforms including iPhone, Android, Blackberry and Windows Mobile. Our mobile application development team comprises of highly skilled and experienced professionals who have delivered various mobile applications for our clients. We have developed mobile applications for various domains including:',
-            image:'mobileapp.jpg',
+            description:'Spraxa specializes in Android, iOS, iPhone, iPad, and universal mobile app development. Their expertise extends to HTML5 mobile app development, leveraging the reach and impact of these platforms for businesses\' success.',
+            image:'mobileapp.png',
+            link:'mobileappdev',
             readMore: true
         },
         {
             title:'Artificial Intelligence',
-            description:'Artificial Intelligence (AI) is the ability of a computer or a robot controlled by a computer to do tasks that are usually done by humans because they require human intelligence and discernment. AI is a branch of computer science that deals with intelligent behavior, learning, and adaptation in machines. AI is being used in a wide range of fields including medical diagnosis, stock trading, robot control, law, remote sensing, scientific discovery and toys. AI is also used in video games and also in military projects. AI is achieved by studying how human brain thinks, and how humans learn, decide, and work while trying to solve a problem, and then using the outcomes of this study as a basis of developing intelligent software and systems.',
+            description:'Artificial intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions.',
             image:'ai.png',
+            link:"ai",
             readMore: false
         },
         {
             title:'Machine Learning',
-            description:'Machine learning is a field of computer science that gives computers the ability to learn without being explicitly programmed. Machine learning is closely related to (and often overlaps with) computational statistics, which also focuses in prediction-making through the use of computers. It has strong ties to mathematical optimization, which delivers methods, theory and application domains to the field. Machine learning is employed in a range of computing tasks where designing and programming explicit algorithms with good performance is difficult or infeasible; example applications include email filtering, detection of network intruders or malicious insiders working towards a data breach, optical character recognition (OCR), learning to rank, and computer vision.',
+            description:'Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.',
             image:'ml.png',
+            link:'ml',
             readMore: false
         },
     ]
   return (
-    <>
-        <Header/>
         <Box sx={{display:'flex', alignItems:'center', justifyContent:'center', gap:5, flexWrap:'wrap'}}>
         {
             Services.map((service,index) => (
                 <VrCard
                     key={index}
-                    width={300}
+                    width={350}
                     height={400}
                     image={service.image}
                     imgPath="services"
                     imgWidth={200}
-                    imgHeight={200}
+                    imgHeight={150}
                     avatar={false}
                     title={service.name}
                     subtitle={service.title}
                     description={service.description}
                     readMore={service.readMore}
-                    redirectTo="/home"
+                    redirectTo={`/${service.link}`}
+                    bgColor='#0fac7d'
+                    color='white'
                 />
             ))
         }
         </Box>
-
-    </>
   )
 }
 
