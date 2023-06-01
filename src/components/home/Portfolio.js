@@ -1,6 +1,7 @@
 import { Typography,Grid, Box } from '@mui/material'
 import React from 'react'
 import PortfolioCard from '../Common/PortfolioCard'
+import { SectionHeader } from '../Common/Headings'
 
 const Portfolio = () => {
   const Projects = [
@@ -41,7 +42,7 @@ const Portfolio = () => {
 
   return (
     <Grid container style={{display:"flex", flexDirection:'column',alignItems:'center', justifyContent:'center', gap:40}}>
-      <Typography variant='h4' style={{fontWeight:'bold'}}>Portfolio</Typography>
+      <SectionHeader title='Our Portfolio'/>
       <Grid item style={{display:"flex", flexDirection:'row', alignItems:'center', justifyContent:'center', flexWrap:"wrap", gap:40}}>
         {
           Projects.map((project, index) => (

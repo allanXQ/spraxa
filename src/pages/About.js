@@ -2,6 +2,9 @@ import React from 'react'
 import Header from '../components/Header'
 import { Box, Card, CardContent, Grid, Typography } from '@mui/material'
 import { HrCard, VrCard } from '../components/Common/CustomCards'
+import { SectionHeader } from '../styles'
+import { CustomColor } from '../styles'
+import NormalText from '../components/Common/BodyContent'
 
 const About = () => {
     const Executives = [
@@ -19,12 +22,19 @@ const About = () => {
         }
     ]
   return (
-        <Grid container style={{display:'flex', flexDirection:'column',alignItems:'center', justifyContent:'center', gap:20}}>
-            <Grid item xs={12} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <Grid container sx={{display:'flex', flexDirection:'column', gap:2, ml:{xs:2, sm:5}, mt:0}}>
+            <Typography sx={{
+                color:'secondary.main',
+                fontSize:'2rem',
+                fontWeight:'bold',
+                display:'flex',
+                alignSelf:"center"
+                }}>BEST SERVICES AND CONSULTING FOR BUSINESS</Typography>
+            <Grid item xs={12} sx={{display:'flex'}}>
                 <HrCard
                     width={1250}
                     height='auto'
-                    title='Executive Leadership'
+                    title='EXECUTIVE LEADERSHIP'
                     image='team.jpg'
                     imgWidth='100%'
                     imgHeight='auto'
@@ -34,9 +44,21 @@ const About = () => {
                 />
             </Grid>
 
-            <Grid item xs={12} style={{display:'flex',flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-                <Typography variant='h4' style={{fontWeight:'bold'}}>Executive Team</Typography>
-                <Typography variant='body1'>Meet our professional and experienced team!</Typography>
+            <Grid item xs={12} sx={{display:'flex',flexDirection:'column'}}>
+                <Box sx={{display:'flex',flexDirection:'column', gap:0.5}}>
+                    <Box sx={{display:'flex', alignItems:'center'}}>
+                        <Typography sx={
+                            {
+                                ...SectionHeader,
+                                textDecorationLine:'underline',
+                                textDecorationThickness:5,
+                                textDecorationColor: CustomColor.primary,
+                            }
+                            }>EX</Typography>
+                        <Typography  sx={SectionHeader}>ECUTIVE</Typography>
+                    </Box>
+                <NormalText text="Meet our professional and experienced team"/>
+                </Box>
                     <Box sx={(theme)=>({
                         display:'flex',
                         gap:5, 
@@ -63,14 +85,13 @@ const About = () => {
                             />
                         ))}
                     </Box>
-                    
             </Grid>
 
-            <Grid item xs={12} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+            <Grid item xs={12} sx={{display:'flex'}}>
                 <HrCard
                     width={1250}
                     height='auto'
-                    title='Our Partners'
+                    title='OUR PARTNERS'
                     image='partners.jpg'
                     imgWidth='100'
                     imgHeight='auto'

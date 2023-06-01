@@ -1,12 +1,14 @@
 import { Avatar, Box, Button, Card, CardActionArea, CardContent, Typography, styled } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import NormalText from './BodyContent'
+import { CardSubtitle, SectionHeader } from '../../styles'
 
 //for use in products, Services description etc
 const StyledHrCard = styled(Card)(({ theme }) => ({
     display:"flex",
-    backgroundColor:"whitesmoke",
-    alignItems:'center',
+    backgroundColor:"white",
+    // alignItems:'center',
     margin:10,
     padding:20,
     [`@media screen and (max-width: ${theme.breakpoints.values.md}px)`]: {
@@ -16,12 +18,12 @@ const StyledHrCard = styled(Card)(({ theme }) => ({
 
 const StyledHrCardContent = styled(CardContent)(({ theme }) => ({
     display:"flex",
-    alignItems:'center',
+    // alignItems:'center',
     gap:10,
 }))
 
 const HrCard = (props) => {
-    const {width, height, image,imgPath, title, subtitle, description, imgWidth, imgHeight,readMore, redirectTo,reverse} = props
+    const {hideKey,width, height, image,imgPath, title, subtitle, description, imgWidth, imgHeight,readMore, redirectTo,reverse} = props
     function isObject(value) {
         return (
           typeof value === 'object' &&
@@ -30,15 +32,15 @@ const HrCard = (props) => {
         );
       }
     return (
-      <StyledHrCard sx={{width:width,height:height, flexDirection: reverse ? 'row-reverse' : 'row'}}>
+      <StyledHrCard sx={{width:width,height:height, gap:5, flexDirection: reverse ? 'row-reverse' : 'row'}}>
             {<img src={imgPath ? `/images/${imgPath}/${image}` : `/images/${image}`} 
             alt={image.replace(/\.(png|jpe?g|svg)$/, '')} 
             style={{imgWidth: imgWidth, maxWidth:'600px', height: imgHeight, maxHeight:'700px', objectFit:'contain'}}
             />
             }
         <StyledHrCardContent sx={{flexDirection: 'column'}}>
-            {title && <Typography variant='h6' style={{fontWeight:'bold'}}>{title}</Typography>}
-            {subtitle && <Typography variant='body2' style={{fontWeight:'bold'}}>{subtitle}</Typography>}
+            {title && <Typography style={SectionHeader}>{title}</Typography>}
+            {subtitle && <Typography style={{...CardSubtitle, maxWidth:270}}>{subtitle}</Typography>}
             {description && typeof description==='string' ?  
                 ( <Typography variant='body1'>{description}</Typography>)
             : description && Array.isArray(description) ? 
@@ -54,9 +56,9 @@ const HrCard = (props) => {
                 <Box>
                     {
                         Object.keys(description).map(desc=>(
-                            <Box>
-                                <Typography style={{fontWeight:"bold"}}>{desc}</Typography>
-                                <Typography>{description[desc]}</Typography>
+                            <Box sx={{display:'flex'}}>
+                                {!hideKey && <Typography sx={{fontWeight:"bold"}}>{desc}</Typography>}
+                                <NormalText style={{marginBottom:15}}>{description[desc]}</NormalText>
                             </Box>
                         ))
                     }
@@ -100,10 +102,14 @@ const StyledVrCardActionArea = styled(CardActionArea)(({ theme }) => ({
 const VrCard = (props) => {
     const {bgColor, color, width, height, image,imgPath, avatar, title, subtitle, description, imgWidth, imgHeight,readMore, redirectTo} = props
     return (
-      <StyledVrCard sx={{width:width, 
+      <StyledVrCard style={{width:width, 
       height:height, 
-      backgroundColor: bgColor ? bgColor : 'whitesmoke',
+      backgroundColor: bgColor ? bgColor : 'white',
       color: color ? color : 'black',
+      boxShadow: '0px 0px 8px 0px rgba(0,0,0,0.3)',
+      '&:hover':{
+            transform: 'scale3d(2.006, 2.006, 9)'
+        }
       }}>
             {
                 avatar ? <Avatar src={imgPath ? `/images/${imgPath}/${image}` : `/images/${image}`} alt={image.replace(/\.(png|jpe?g|svg)$/, '')} sx={{width:100, height:100}}/>
@@ -116,10 +122,12 @@ const VrCard = (props) => {
         <StyledVrCardContent>
             {title && <Typography variant='h6' style={{fontWeight:'bold'}}>{title}</Typography>}
             {subtitle && <Typography variant='subtitle1' style={{fontWeight:'bold'}}>{subtitle}</Typography>}
-            {description && <Typography variant='body1'>
-                {description}
+            {description && 
+            <Box>
+                <NormalText text={description}/>
                 {readMore && <Typography variant='body2' component={Link} to={redirectTo} style={{color:"black"}}> Read More</Typography>}
-            </Typography>}
+            </Box>
+            }   
         </StyledVrCardContent>
       </StyledVrCard>
     )

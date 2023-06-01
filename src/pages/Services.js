@@ -1,7 +1,9 @@
 import React from 'react'
 import Header from '../components/Header'
 import { VrCard } from '../components/Common/CustomCards'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
+import NormalText from '../components/Common/BodyContent'
+import { CustomColor, SectionHeader } from '../styles'
 
 const Services = () => {
     const Services = [
@@ -35,9 +37,9 @@ const Services = () => {
         },
         { 
             title:'Technology', 
-            description:'Spraxa Solutions offers reliable IT solutions, deploying cutting-edge technology to provide effective strategies for clients. They understand the importance of technology in today\'s business world and strive for innovation in delivering quality services, specializing in mobile and web application development, big data, and open-source platforms.',
+            description:'Spraxa Solutions offers reliable IT solutions, deploying cutting-edge technology to provide effective strategies for clients. We understand the importance of technology in today\'s business world and strive for innovation in delivering quality services.',
             image:'technology.png',
-            link:'technology',
+            link:'techoverview',
             readMore: true
         },
         { 
@@ -77,7 +79,24 @@ const Services = () => {
         },
     ]
   return (
-        <Box sx={{display:'flex', alignItems:'center', justifyContent:'center', gap:5, flexWrap:'wrap'}}>
+    <>
+        <Box sx={{display:'flex',flexDirection:'column', gap:0.5, ml:{xs:2, sm:5}, mt:0}}>
+            <Typography sx={SectionHeader}>OUR SERVICES WILL HELP </Typography>
+
+            <Box sx={{display:'flex', alignItems:'center'}}>
+                <Typography sx={
+                    {
+                        ...SectionHeader,
+                        textDecorationLine:'underline',
+                        textDecorationThickness:5,
+                        textDecorationColor: CustomColor.primary,
+                    }
+                    }>IM</Typography>
+                <Typography sx={SectionHeader}>PROVE YOUR BUSINESS</Typography>
+            </Box>
+            <NormalText text="Our experts are able to find new growth opportunities in your business."/>
+        </Box>
+        <Box sx={{display:'flex', alignItems:'center', justifyContent:'center', gap:2, flexWrap:'wrap'}}>
         {
             Services.map((service,index) => (
                 <VrCard
@@ -94,12 +113,15 @@ const Services = () => {
                     description={service.description}
                     readMore={service.readMore}
                     redirectTo={`/${service.link}`}
-                    bgColor='#0fac7d'
-                    color='white'
+                    color='#353535'
+                    bgColor="#fff"
                 />
             ))
         }
         </Box>
+
+    </>
+        
   )
 }
 

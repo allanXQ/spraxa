@@ -2,6 +2,8 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import { VrCard } from '../../components/Common/CustomCards'
 import PortfolioCard from '../../components/Common/PortfolioCard'
+import { CustomColor, SectionHeader } from '../../styles'
+import NormalText from '../../components/Common/BodyContent'
 
 const AppDevelopment = () => {
     const techs = [
@@ -69,12 +71,22 @@ const AppDevelopment = () => {
       ]
   return (
     <Box>
-        <Typography>APPLICATION DEVELOPMENT</Typography>
-        <Typography>
-            Mobile app development is the act or process by which a mobile app is developed for mobile devices, 
+        <Box sx={{display:'flex',flexDirection:'column', gap:0.5, ml:{xs:2, sm:5}, mt:0}}>
+                <Box sx={{display:'flex', alignItems:'center'}}>
+                    <Typography sx={
+                        {
+                            ...SectionHeader,
+                            textDecorationLine:'underline',
+                            textDecorationThickness:5,
+                            textDecorationColor: CustomColor.primary,
+                        }
+                        }>AP</Typography>
+                    <Typography sx={SectionHeader}>PLICATION DEVELOPMENT</Typography>
+                </Box>
+                <NormalText text="Mobile app development is the act or process by which a mobile app is developed for mobile devices, 
             such as personal digital assistants, enterprise digital assistants or mobile phones. 
-            These applications can be pre-installed on phones during manufacturing.
-        </Typography>
+            These applications can be pre-installed on phones during manufacturing."/>
+            </Box>
         <Box sx={{display:'flex', flexWrap:'wrap', alignItems:'center',justifyContent:"center"}}>
             {
                 techs.map((tech,index)=>(
@@ -89,7 +101,7 @@ const AppDevelopment = () => {
                         description={tech.description}
                         avatar={false}
                         readMore={false}
-                        bgColor='#0fac7d'
+                        bgColor='#50d8af'
                         color='white'
                     />
                 ))

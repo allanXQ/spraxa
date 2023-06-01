@@ -3,6 +3,22 @@ import React from 'react'
 import PlaceIcon from '@mui/icons-material/Place';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import Header from '../components/Header';
+import { styled } from 'styled-components';
+import { Link } from 'react-router-dom';
+
+const JobCard = styled(Card)(({theme}) => ({
+    backgroundColor:'white',
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'space-evenly',
+    gap:20,
+    padding:10,
+    margin:10,
+    width:'90%',
+    height:'18vh',
+    border:'2px solid #e6ebec',
+}))
 
 const Jobs = () => {
     const jobs = [
@@ -50,20 +66,20 @@ const Jobs = () => {
         }
 
     ]
+    const icon = {
+        color:'secondary.icon',
+    }
   return (
-    <>
-        <Header/>
-        <Grid container style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
-        {/* <Typography variant="h4">Jobs</Typography> */}
+    <Grid container style={{display:'flex',flexDirection:'column', alignItems:'center', gap:20}}>
         <Grid item style={{display:'flex', flexDirection:'column', justifyContent:'center',alignItems:'center', width:'100%'}}>
             {
                 jobs.map((job, index) => {
                     return (
-                        <Card key={index} style={{ backgroundColor:'whitesmoke', display:'flex', flexDirection:'column', gap:20, padding:10, margin:10, width:'80%'}}>
+                        <JobCard key={index} style={{boxShadow: "5px 10px #e6ebec"}}>
                             <Box style={{display:'flex', gap:4, alignItems:'center'}}> 
                                 <Typography variant="h5">{job.title}</Typography>
                                 {job.WFO ?
-                                    <Box style={{display:'flex',alignItems:'center', justifyContent:'center',borderRadius:5, backgroundColor:'blue',color:'white',height:'25px', width:'50px'}}>
+                                    <Box sx={{display:'flex',alignItems:'center', justifyContent:'center',borderRadius:1, backgroundColor:'wfo.main',color:'white',height:'25px', width:'50px'}}>
                                         <Typography variant="subtitle2">WFO</Typography>
                                     </Box>
                                     : ''
@@ -73,29 +89,27 @@ const Jobs = () => {
 
                              justifyContent:'space-between'}}>
                                 <Box sx={{display:'flex', gap:2}}>
-                                    <WorkHistoryIcon />
+                                    <WorkHistoryIcon sx={icon}/>
                                     <Typography variant="body1">{job.requirements}</Typography>
                                 </Box>
                                 <Box sx={{display:'flex', gap:2}}>
-                                    <PlaceIcon />
+                                    <PlaceIcon sx={icon}/>
                                     <Typography variant="body1">{job.location}</Typography>
                                 </Box>
                             </Box>
-                        </Card>
+                        </JobCard>
                     )
                 }
                 )
             }
         </Grid>
         <Grid item>
-            <Button variant='contained'>Browse More Jobs</Button>
+            <Button variant='contained' sx={{width:180, height:50,color:"white"}}>Browse More Jobs</Button>
         </Grid>
         <Grid item>
-            <Typography variant="h5">Send your resume to <a href="mailto:careers@spraxa.com">careers@spraxa.com</a></Typography>
+            <Typography variant="h6" sx={{color:'secondary.main'}}>Send your resume to <a href="mailto:careers@spraxa.com" style={{fontSize:"16px"}}>careers@spraxa.com</a></Typography>
         </Grid>
     </Grid>
-    </>
-   
   )
 }
 

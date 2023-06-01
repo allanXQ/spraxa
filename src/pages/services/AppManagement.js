@@ -4,8 +4,14 @@ import { Box, Typography } from '@mui/material'
 
 const AppManagement = () => {
   return (
-    <Box>
-        <Typography>BEST SERVICES AND CONSULTING FOR BUSINESS</Typography>
+    <Box style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
+      <Typography sx={{
+                color:'secondary.main',
+                fontSize:'3rem',
+                fontWeight:'bold',
+                display:'flex',
+                alignSelf:"center"
+                }}>BEST SERVICES AND CONSULTING FOR BUSINESS</Typography>
         <Box>
             <HrCard
                 width={1250}

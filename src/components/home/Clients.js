@@ -4,6 +4,7 @@ import { Pagination,Autoplay,EffectCoverflow } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
+import { SectionHeader } from '../Common/Headings';
 
 const importAllImages = (r) => {
     let images = [];
@@ -16,7 +17,7 @@ const Clients = () => {
   return (
     <Grid container style={{display:'flex', flexDirection:'', justifyContent:'center', alignItems:'center', gap:20}}>
         <Grid item style={{}}>
-            <Typography variant='h4' style={{fontWeight:'bold'}}>Our Clients</Typography>
+            <SectionHeader title='Our Clients'/>
         </Grid>
         <Grid item style={{overflow:"hidden", gap:50}}>
             <Swiper
@@ -27,17 +28,6 @@ const Clients = () => {
                 autoplay={{
                     delay: 1500,
                     disableOnInteraction: false
-                }}
-                pagination={{
-                    clickable: true
-                }}
-                effect={'coverflow'}
-                coverflowEffect={{
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true
                 }}
                 breakpoints={{
                     640: {

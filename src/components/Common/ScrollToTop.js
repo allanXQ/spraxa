@@ -34,9 +34,9 @@ const ScrollToTop = () => {
         bottom:'20px',
         right:'20px',
         zIndex:'99',
-        backgroundColor:'#0fac7d',
+        backgroundColor:'#50d8af',
         '&:hover':{
-            backgroundColor:'#0fac7d',
+            backgroundColor:'#50d8af',
             width:'55px',
             height:'55px'
         },

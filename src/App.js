@@ -16,10 +16,12 @@ import AppDevelopment from './pages/services/AppDevelopment';
 import MobileAppDev from './pages/services/MobileAppDev';
 import Technology from './pages/services/Technology';
 import RootLayout from './Layouts/RootLayout';
-
+import Portfolio from './pages/Portfolio';
+import TechOverview from './pages/services/TechOverview';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+    <>
     <Route path='/' element={<RootLayout/>}>
       <Route index element={<Home/>}/>
       <Route path='home' element={<Home/>}/>
@@ -35,12 +37,13 @@ const router = createBrowserRouter(
         <Route path='bigdata' element={<BigData/>}/>
         <Route path='appdevelopment' element={<AppDevelopment/>}/>
         <Route path='mobileappdev' element={<MobileAppDev/>}/>
-      {/* </Route> */}
+        <Route path='techoverview' element={<TechOverview/>}/>
       <Route path='technology' element={<Technology/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='*' element={<NotFound/>}/>
     </Route>
-        
+    <Route path='portfolio' element={<Portfolio/>}/>
+    </>
   )
 );
 

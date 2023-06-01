@@ -26,8 +26,14 @@ const BigData = () => {
         }
     ]
   return (
-    <Box>
-        <Typography>BIG DATA</Typography>
+    <Box style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
+      <Typography sx={{
+                color:'secondary.main',
+                fontSize:'3rem',
+                fontWeight:'bold',
+                display:'flex',
+                alignSelf:"center"
+                }}>BIG DATA</Typography>
         <Box>
             {
                 projects.map((project, index)=>(
@@ -40,6 +46,7 @@ const BigData = () => {
                         imgHeight='auto'
                         imgPath='services/service'
                         description={project.description}
+                        hideKey={true}
                         reverse={index % 2 !==0}
                     />
                 ))
