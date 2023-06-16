@@ -2,28 +2,24 @@
 // primary.main not wrking on text decoration
 
 const SectionHeader = {
-    color:'#0c2e8a',
-    fontSize:'36px',
-    lineHeight:'50px',
-    letterSpacing:'1px',
-    fontWeight: 700,
-}
+  color: "#0c2e8a",
+  fontSize: "36px",
+  lineHeight: "50px",
+  letterSpacing: "1px",
+  fontWeight: 700,
+};
 
 const CardSubtitle = {
-    lineHeight: '30px',
-    verticalAlign: 'baseline',
-    letterSpacing: 'normal',
-    fontWeight:900,
-    fontSize:'20px',
-    fontStyle:'normal',
-    fontSariant: 'normal',
-    color:'#50d8af'
-}
+  lineHeight: "30px",
+  verticalAlign: "baseline",
+  letterSpacing: "normal",
+  fontWeight: 900,
+  fontSize: "20px",
+  fontStyle: "normal",
+  fontSariant: "normal",
+  color: "#50d8af",
+};
 
-const SectionGap = 5
+const SectionGap = 5;
 
-const CustomColor = {
-    primary: '#50d8af'
-}
-
-export {SectionHeader, SectionGap, CustomColor, CardSubtitle}
+export { SectionHeader, SectionGap, CardSubtitle };

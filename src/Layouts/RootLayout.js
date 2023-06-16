@@ -1,20 +1,21 @@
-import React from 'react'
-import Header from '../components/Header'
-import { Outlet } from 'react-router-dom'
-import Footer from '../components/Footer'
-import ScrollToTop from '../components/Common/ScrollToTop'
+import React from "react";
+import Header from "../components/Hero";
+import { Outlet, useLocation } from "react-router-dom";
+import Footer from "../components/Footer";
+import ScrollToTop from "../components/Common/ScrollToTop";
 
 const RootLayout = () => {
+  const location = useLocation();
   return (
     <div>
-        <Header/>
-        <main>
-            <Outlet/>
-        </main>
-        <ScrollToTop/>
-        <Footer/>
+      {!location.pathname.match("/services/portfolio") && <Header />}
+      <main>
+        <Outlet />
+      </main>
+      <ScrollToTop />
+      {!location.pathname.match("/services/portfolio") && <Footer />}
     </div>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

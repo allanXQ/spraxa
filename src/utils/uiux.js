@@ -187,7 +187,68 @@ const Services = [
                 ]
             }
         ]
+    },
+    {
+        name: 'printing',
+        items: [
+            {
+                title:'COOLR BROCHURE',
+                subtitle: 'Lorem ipsum dolor sit amet consectetur.', 
+                image:'coolr_brochure.jpg',
+                Date:'January 2017',
+                Client:'Lines',
+                Category:'Branding',
+                description: [
+                    "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!"
+                ]
+            },
+            {
+                title:'COOLR CATALOGUE',
+                subtitle: 'Lorem ipsum dolor sit amet consectetur.', 
+                image:'catalogue.jpg',
+                Date:'January 2017',
+                Client:'Lines',
+                Category:'Branding',
+                description: [
+                    "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!"
+                ]
+            },
+            {
+                title:'SPRAXA PRINTING MATERIAL',
+                subtitle: 'Lorem ipsum dolor sit amet consectetur.', 
+                image:'certificate.jpg',
+                Date:'January 2017',
+                Client:'Lines',
+                Category:'Branding',
+                description: [
+                    "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!"
+                ]
+            },
+            {
+                title:'MDM BROCHURE',
+                subtitle: 'Lorem ipsum dolor sit amet consectetur.', 
+                image:'MDM Iot.jpg',
+                Date:'January 2017',
+                Client:'Lines',
+                Category:'Branding',
+                description: [
+                    "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!"
+                ]
+            },
+            {
+                title:'QUOTE',
+                subtitle: 'Motivational Quotes for Office walls.', 
+                image:['01.png','02.png','03.png','04.png','05.png',],
+                Date:'January 2017',
+                Client:'Lines',
+                Category:'Branding',
+                description: [
+                    "Designed motivational quotes for office wall to do something creative and mtovational, that will attract and motivate to the collegues."
+                ]
+            }
+        ]
     }
+
     
 
 ]
