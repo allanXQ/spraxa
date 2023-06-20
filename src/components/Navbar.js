@@ -23,7 +23,7 @@ const Navbar = () => {
   const drawer = (
     <div>
       <List>
-        {pages.map((page) => (
+        {pages.map((page, index) => (
           <ListItem key={page} onClick={handleDrawerToggle}>
             <NavLink to={`/${page.toLowerCase()}`} className="NavLink">
               {page}

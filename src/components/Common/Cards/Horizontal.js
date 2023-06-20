@@ -8,8 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import NormalText from "../BodyContent";
-import { CardSubtitle, SectionHeader } from "../../../styles";
+import { CardSubtitle, SecondaryHeader } from "../../../styles";
 
 //for use in products, Services description etc
 const StyledHrCard = styled(Card)(({ theme }) => ({
@@ -71,7 +70,7 @@ export const HorizontalCard = (props) => {
         />
       }
       <StyledHrCardContent sx={{ flexDirection: "column" }}>
-        {title && <Typography style={SectionHeader}>{title}</Typography>}
+        {title && <Typography style={SecondaryHeader}>{title}</Typography>}
         {subtitle && (
           <Typography style={{ ...CardSubtitle, maxWidth: 270 }}>
             {subtitle}
@@ -92,9 +91,9 @@ export const HorizontalCard = (props) => {
                 {!hideKey && (
                   <Typography sx={{ fontWeight: "bold" }}>{desc}</Typography>
                 )}
-                <NormalText style={{ marginBottom: 15 }}>
+                <Typography variant="bodytext" style={{ marginBottom: 15 }}>
                   {description[desc]}
-                </NormalText>
+                </Typography>
               </Box>
             ))}
           </Box>

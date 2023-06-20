@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import NormalText from "../components/Common/BodyContent";
 import BodyContainer from "../components/Common/BodyContainer";
 
 const Products = () => {
@@ -22,14 +21,16 @@ const Products = () => {
             <Typography variant="h5" style={{ fontWeight: "bold" }}>
               Kundli Mobile
             </Typography>
-            <NormalText
-              text="
-                        The Kundli application is made by Durlabh Jain. Kundli app provides you with kundli or Janma Kundali 
-                        creation, dosha reports and their specific remedies, gemstone suggestions based on birth kundli, 
-                        various astrological calculations, Answers to the Kundli related questions, daily personalised horoscope,
-                        even Match Making and much more completely free. Kundli app is an ultimate app on Vedic Astrology created
-                        using accurate and ancient Vedic Astrological techniques and methods."
-            />
+            <Typography variant="bodytext">
+              The Kundli application is made by Durlabh Jain. Kundli app
+              provides you with kundli or Janma Kundali creation, dosha reports
+              and their specific remedies, gemstone suggestions based on birth
+              kundli, various astrological calculations, Answers to the Kundli
+              related questions, daily personalised horoscope, even Match Making
+              and much more completely free. Kundli app is an ultimate app on
+              Vedic Astrology created using accurate and ancient Vedic
+              Astrological techniques and methods.
+            </Typography>
             <Box style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <a href="https://play.google.com/store/apps/details?id=com.durlabh.kundli&hl=en_IN">
                 <Typography variant="body1" style={{ fontWeight: "bold" }}>
@@ -59,10 +60,10 @@ const Products = () => {
             <Typography variant="h5" style={{ fontWeight: "bold" }}>
               Shikhar App
             </Typography>
-            <NormalText
-              text="
-                        This online application can help you to enter your petty expenses with attaching the receipts."
-            />
+            <Typography variant="bodytext">
+              This online application can help you to enter your petty expenses
+              with attaching the receipts.
+            </Typography>
           </Box>
           <Box style={{}}>
             <img src="/images/products/shikhar.PNG" width={500}></img>
@@ -86,12 +87,13 @@ const Products = () => {
             <Typography variant="h5" style={{ fontWeight: "bold" }}>
               Exception Browser
             </Typography>
-            <NormalText
-              text="
-                        Exception Browser is used for error logging and email notification to the group. 
-                        For different project we can create email group for notification. Through this software, 
-                        Error tracing is easy which saves the developer time on debugging for large and small Projects."
-            />
+            <Typography variant="bodytext">
+              Exception Browser is used for error logging and email notification
+              to the group. For different project we can create email group for
+              notification. Through this software, Error tracing is easy which
+              saves the developer time on debugging for large and small
+              Projects.
+            </Typography>
           </Box>
         </Box>
       </Box>

@@ -1,7 +1,7 @@
 import { Typography, Grid, Box } from "@mui/material";
 import React from "react";
 import PortfolioCard from "../Common/PortfolioCard";
-import { PrimaryHeader, SectionHeader } from "../Common/Header";
+import { PrimaryHeader, SecondaryHeader } from "../Common/Header";
 import SectionContainer from "../Common/SectionContainer";
 
 const Portfolio = () => {
@@ -43,17 +43,18 @@ const Portfolio = () => {
   return (
     <SectionContainer>
       <PrimaryHeader
-        text={[
+        title={[
           { text: "OU", underline: true, noGap: true },
           { text: "R ", underline: false },
           { text: "PORTFOLIO", underline: false },
         ]}
+        margin={true}
+        subtitle="
+          View our collection of portfolio website designs and optimize your
+          website with us today, our team is always ready to serve you the best
+          website and mobile apps.
+          "
       />
-      <Typography>
-        View our collection of portfolio website designs and optimize your
-        website with us today, our team is always ready to serve you the best
-        website and mobile apps.
-      </Typography>
       <Grid
         item
         style={{

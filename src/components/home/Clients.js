@@ -4,7 +4,7 @@ import { Pagination, Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-import { PrimaryHeader, SectionHeader } from "../Common/Header";
+import { PrimaryHeader, SecondaryHeader } from "../Common/Header";
 
 const importAllImages = (r) => {
   let images = [];
@@ -28,10 +28,11 @@ const Clients = () => {
     >
       <Grid item style={{}}>
         <PrimaryHeader
-          text={[
+          title={[
             { text: "CLI ", underline: true, noGap: true },
             { text: "ENTS", underline: false },
           ]}
+          margin={true}
         />
       </Grid>
       <Grid item style={{ overflow: "hidden", gap: 50 }}>

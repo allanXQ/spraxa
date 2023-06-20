@@ -1,7 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import NormalText from "../components/Common/BodyContent";
-import { SectionHeader } from "../styles";
+import { Box } from "@mui/material";
 import { VerticalCard } from "../components/Common/Cards/Vertical";
 import { PrimaryHeader } from "../components/Common/Header";
 import BodyContainer from "../components/Common/BodyContainer";
@@ -14,7 +12,7 @@ const Services = () => {
         "Mobile app popularity has surged due to fast networks and the need for on-the-go information. Software companies must have a mobile version to stay competitive. Users crave simplicity and access apps for info, utility, and entertainment.",
       image: "mobileapp.png",
       link: "mobileapps",
-      readMore: false,
+      readMore: true,
     },
     {
       title: "Web & (UI/UX) Design",
@@ -22,7 +20,7 @@ const Services = () => {
         "In July, 2007, Spraxa Solutions expanded into web-designing sphere designing web-sites, skins, templates, logos designing, marketing material and application layouts",
       image: "uidesign.png",
       link: "portfolio",
-      readMore: false,
+      readMore: true,
     },
     {
       title: "Application Management & Support",
@@ -30,7 +28,7 @@ const Services = () => {
         "Spraxa provides end-to-end application lifecycle management, including maintenance, new feature development, and support. We offer flexible pricing options and engagement models with managed services for a comprehensive solution.",
       image: "appmanagement.png",
       link: "appmanagement",
-      readMore: false,
+      readMore: true,
     },
     {
       title: "Platform Solutions",
@@ -38,7 +36,7 @@ const Services = () => {
         "We offer WordPress and Joomla design, development, customization, and integration services. Additionally, we specialize in Microsoft SharePoint deployment, customization, and maintenance, as well as Microsoft SQL Server analysis, database design, optimization, and reporting services.",
       image: "cms.png",
       link: "platformsolutions",
-      readMore: false,
+      readMore: true,
     },
     {
       title: "Technology",
@@ -46,7 +44,7 @@ const Services = () => {
         "Spraxa Solutions offers reliable IT solutions, deploying cutting-edge technology to provide effective strategies for clients. We understand the importance of technology in today's business world and strive for innovation in delivering quality services.",
       image: "technology.png",
       link: "techoverview",
-      readMore: false,
+      readMore: true,
     },
     {
       title: "Big Data",
@@ -54,7 +52,7 @@ const Services = () => {
         "InfodriveIndia offers market intelligence for export-import businesses, while Volza provides dashboards with shipment records for business planning. CoolR's technology uses machine learning to optimize sales efficiency with detailed analytics.",
       image: "bigdata.png",
       link: "bigdata",
-      readMore: false,
+      readMore: true,
     },
     {
       title: "Application Development",
@@ -62,7 +60,7 @@ const Services = () => {
         "Mobile app development is the creation of apps for mobile devices like phones or PDAs. They can be pre-installed during manufacturing and are designed for various purposes.",
       image: "appdevelopment.png",
       link: "appdevelopment",
-      readMore: false,
+      readMore: true,
     },
     {
       title: "Mobile App Development",
@@ -70,7 +68,7 @@ const Services = () => {
         "Spraxa specializes in Android, iOS, iPhone, iPad, and universal mobile app development. Their expertise extends to HTML5 mobile app development, leveraging the reach and impact of these platforms for businesses' success.",
       image: "mobileapp.png",
       link: "mobileappdev",
-      readMore: false,
+      readMore: true,
     },
     {
       title: "Artificial Intelligence",
@@ -92,7 +90,7 @@ const Services = () => {
   return (
     <BodyContainer>
       <PrimaryHeader
-        text={[
+        title={[
           { text: "OUR ", underline: false },
           { text: "SERVICES ", underline: false },
           { text: "WILL", underline: false },
@@ -102,23 +100,24 @@ const Services = () => {
           { text: " YOUR", underline: false },
           { text: " BUSINESS", underline: false },
         ]}
+        margin={true}
         maxWidth={470}
+        subtitle="Our experts are able to find new growth opportunities in your business."
       />
-      <NormalText text="Our experts are able to find new growth opportunities in your business." />
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          gap: 2,
+          gap: 5,
           flexWrap: "wrap",
         }}
       >
         {Services.map((service, index) => (
           <VerticalCard
             key={index}
-            width={350}
-            height={400}
+            width={550}
+            height={450}
             image={service.image}
             imgPath="services"
             imgWidth={200}

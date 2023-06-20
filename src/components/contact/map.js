@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import NormalText from "../Common/BodyContent";
+import BodyText from "../Common/BodyContent";
 import { PrimaryHeader } from "../Common/Header";
 
 const Map = () => {
@@ -10,22 +10,19 @@ const Map = () => {
         display: "flex",
         flexDirection: "column",
         gap: 2,
-        ml: { xs: 2, sm: 5 },
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
-        <PrimaryHeader
-          text={[
-            { text: "FIND", underline: true },
-            { text: " US", underline: false },
-            { text: " ON", underline: false },
-            { text: "GOOGLE", underline: false },
-            { text: " MAPS", underline: false },
-          ]}
-          width="100%"
-        />
-        <NormalText text="We are located 2 minutes from kaushambi Metro Station and 5 minutes from Anand Vihar metro station / bus station." />
-      </Box>
+      <PrimaryHeader
+        title={[
+          { text: "FIND", underline: true },
+          { text: " US", underline: false },
+          { text: " ON", underline: false },
+          { text: "GOOGLE", underline: false },
+          { text: " MAPS", underline: false },
+        ]}
+        margin={true}
+        subtitle="We are located 2 minutes from kaushambi Metro Station and 5 minutes from Anand Vihar metro station / bus station."
+      />
       <iframe
         width="90%"
         height="500"

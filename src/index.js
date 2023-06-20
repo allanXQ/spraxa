@@ -13,6 +13,12 @@ const theme = createTheme({
       fontWeight: 400,
       lineHeight: "1.5rem",
     },
+    boldbodytext: {
+      fontSize: "1rem",
+      color: "#616161",
+      fontWeight: 600,
+      lineHeight: "1.5rem",
+    },
     heroHeading: {
       fontSize: "3.125rem",
       lineHeight: "4.688",
@@ -28,7 +34,8 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#50d8af",
-      darkblue: "#0c2e8a",
+      darkgreen: "#2c9877",
+      darkblue: "#020d26", //"#0c2e8a",
     },
     secondary: {
       main: "#353535",

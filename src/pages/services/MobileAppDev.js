@@ -1,9 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import PortfolioCard from "../../components/Common/PortfolioCard";
-import { CustomColor, SectionHeader } from "../../styles";
-import NormalText from "../../components/Common/BodyContent";
 import { VerticalCard } from "../../components/Common/Cards/Vertical";
+import { PrimaryHeader } from "../../components/Common/Header";
 
 const AppDevelopment = () => {
   const techs = [
@@ -88,23 +87,20 @@ const AppDevelopment = () => {
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Typography
-            sx={{
-              ...SectionHeader,
-              textDecorationLine: "underline",
-              textDecorationThickness: 5,
-              textDecorationColor: (theme) => theme.palette.primary.main,
-            }}
-          >
-            AP
-          </Typography>
-          <Typography sx={SectionHeader}>PLICATION DEVELOPMENT</Typography>
+          <PrimaryHeader
+            title={[
+              { text: " AP", underline: true, noGap: true },
+              { text: "PLICATION DEVELOPMENT", underline: false },
+            ]}
+            margin={true}
+          />
         </Box>
-        <NormalText
-          text="Mobile app development is the act or process by which a mobile app is developed for mobile devices, 
-            such as personal digital assistants, enterprise digital assistants or mobile phones. 
-            These applications can be pre-installed on phones during manufacturing."
-        />
+        <Typography variant="bodytext">
+          Mobile app development is the act or process by which a mobile app is
+          developed for mobile devices, such as personal digital assistants,
+          enterprise digital assistants or mobile phones. These applications can
+          be pre-installed on phones during manufacturing.
+        </Typography>
       </Box>
       <Box
         sx={{

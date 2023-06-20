@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
@@ -6,7 +6,7 @@ import facebook from "../images/social/facebook.png";
 import twitter from "../images/social/twitter.png";
 import linkedIn from "../images/social/linkedin.png";
 import { SectionGap } from "../styles";
-import NormalText from "../components/Common/BodyContent";
+import BodyText from "../components/Common/BodyContent";
 import Map from "../components/contact/map";
 import { PrimaryHeader } from "../components/Common/Header";
 import BodyContainer from "../components/Common/BodyContainer";
@@ -39,14 +39,15 @@ const Contact = () => {
   return (
     <BodyContainer>
       <PrimaryHeader
-        text={[
+        title={[
           { text: "CONTA", underline: true, noGap: true },
           { text: "CT", underline: false },
           { text: "US", underline: false },
         ]}
+        margin={true}
+        subtitle="We are here to help and answer any question you might have. We look forward to hearing from you."
       />
 
-      <NormalText text="We are here to help and answer any question you might have. We look forward to hearing from you." />
       <Box sx={{ display: "flex", flexDirection: "column", gap: SectionGap }}>
         <Box
           xs={12}
@@ -63,19 +64,23 @@ const Contact = () => {
           >
             <Box sx={CustomContacts}>
               <PhoneIcon />
-              <NormalText text="0120-4167004, +91-9354701277 (India), +1-571-346-7306 (US)" />
+              <Typography variant="bodytext">
+                0120-4167004, +91-9354701277 (India), +1-571-346-7306 (US)
+              </Typography>
             </Box>
             <Box sx={CustomContacts}>
               <MailIcon />
               <a href="mailto: mail@spraxa.com">
-                <NormalText text="mail@spraxa.com" />
+                <Typography variant="bodytext" text="">
+                  mail@spraxa.com
+                </Typography>
               </a>
             </Box>
             <Box
               container
               sx={{ display: "flex", alignItems: "center", gap: 2 }}
             >
-              <NormalText text="Follow Us: " />
+              <Typography variant="bodytext">Follow Us:</Typography>
               <Box sx={{ display: "flex", gap: 1 }}>
                 {socialIcons.map((icon) => (
                   <a

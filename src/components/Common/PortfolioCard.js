@@ -21,7 +21,6 @@ const ActionContainer = styled(Box)(({ theme }) => ({
 
 const PortfolioCard = (props) => {
   const { image, title, imagePath } = props;
-  console.log(imagePath);
   return (
     <Box
       sx={{

@@ -4,8 +4,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  Dialog,
-  Stack,
   TextField,
   Typography,
 } from "@mui/material";
@@ -16,7 +14,6 @@ import { Link } from "react-router-dom";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useState } from "react";
 import { Services } from "../utils/uiux";
-import NormalText from "../components/Common/BodyContent";
 import Modal from "@mui/material/Modal";
 import { Close } from "@mui/icons-material";
 
@@ -232,12 +229,12 @@ const Portfolio = () => {
                           <Typography
                             style={{ fontSize: "48px", fontWeight: 700 }}
                           >
-                            {value.title}
+                            {value.title ? value.title : ""}
                           </Typography>
-                          <NormalText
-                            sx={{ fontStyle: "italic" }}
-                            text={value.subtitle}
-                          />
+
+                          <Typography sx={{ fontStyle: "italic" }}>
+                            {value.subtitle2 ? value.subtitle2 : ""}
+                          </Typography>
                         </Box>
                         <Box
                           sx={{
@@ -273,15 +270,21 @@ const Portfolio = () => {
                           }}
                         >
                           {value.description.map((desc, index) => {
-                            return <NormalText text={desc} />;
+                            return (
+                              <Typography variant="bodytext">{desc}</Typography>
+                            );
                           })}
                         </Box>
                         <Box>
-                          <NormalText text={`Date: ${value.Date}`}></NormalText>
-                          <NormalText
-                            text={`Client: ${value.Client}`}
-                          ></NormalText>
-                          <NormalText text={`Category: ${value.Category}`} />
+                          <Typography variant="bodytext">
+                            Date: {value.Date}
+                          </Typography>
+                          <Typography variant="bodytext">
+                            Client: {value.Client}
+                          </Typography>
+                          <Typography variant="bodytext">
+                            Category: {value.Category}
+                          </Typography>
                         </Box>
                       </CardContent>
                       <CardActions

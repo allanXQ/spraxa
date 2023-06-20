@@ -1,7 +1,7 @@
 // To be added to theme
 // primary.main not wrking on text decoration
 
-const SectionHeader = {
+const SecondaryHeader = {
   color: "#0c2e8a",
   fontSize: "36px",
   lineHeight: "50px",
@@ -22,4 +22,4 @@ const CardSubtitle = {
 
 const SectionGap = 5;
 
-export { SectionHeader, SectionGap, CardSubtitle };
+export { SecondaryHeader, SectionGap, CardSubtitle };

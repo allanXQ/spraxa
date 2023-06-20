@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { VerticalCard } from "../components/Common/Cards/Vertical";
-import { SectionHeader } from "../styles";
-import NormalText from "../components/Common/BodyContent";
+import { SecondaryHeader } from "../styles";
+import BodyText from "../components/Common/BodyContent";
 import { HorizontalCard } from "../components/Common/Cards/Horizontal";
 import BodyContainer from "../components/Common/BodyContainer";
 
@@ -55,7 +55,7 @@ const About = () => {
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Typography
               sx={{
-                ...SectionHeader,
+                ...SecondaryHeader,
                 textDecorationLine: "underline",
                 textDecorationThickness: 5,
                 textDecorationColor: (theme) => theme.palette.primary.main,
@@ -63,9 +63,11 @@ const About = () => {
             >
               EX
             </Typography>
-            <Typography sx={SectionHeader}>ECUTIVE</Typography>
+            <Typography sx={SecondaryHeader}>ECUTIVE</Typography>
           </Box>
-          <NormalText text="Meet our professional and experienced team" />
+          <Typography variant="bodytext">
+            Meet our professional and experienced team
+          </Typography>
         </Box>
         <Box
           sx={(theme) => ({

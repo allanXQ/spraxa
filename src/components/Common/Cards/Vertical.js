@@ -9,33 +9,13 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import NormalText from "../BodyContent";
 
 //for use in testimonials, brief descriptions
-const VrCard = styled(Card)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  margin: 10,
-  padding: 20,
-  position: "relative",
-}));
-
 const VrCardContent = styled(CardContent)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
 }));
-
-const VrCardActionArea = styled(CardActionArea)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignSelf: "flex-end",
-  justifyContent: "flex-end",
-  position: "absolute",
-  bottom: 10,
-}));
-
 export const VerticalCard = (props) => {
   const {
     bgColor,
@@ -52,18 +32,27 @@ export const VerticalCard = (props) => {
     imgHeight,
     readMore,
     redirectTo,
+    disableHover,
   } = props;
   return (
-    <VrCard
-      style={{
+    <Card
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        // justifyContent: "center",
+        // gap: 1,
+        // margin: 10,
+        pt: 2,
+        position: "relative",
         width: width,
         height: height,
         backgroundColor: bgColor ? bgColor : "white",
         color: color ? color : "black",
         boxShadow: "0px 0px 8px 0px rgba(0,0,0,0.3)",
-        "&:hover": {
-          transform: "scale3d(2.006, 2.006, 9)",
-        },
+        "&:hover": disableHover
+          ? null
+          : { transform: "scale3d(1.02, 1.02, 1)" },
       }}
     >
       {avatar ? (
@@ -96,14 +85,23 @@ export const VerticalCard = (props) => {
           </Typography>
         )}
         {description && (
-          <Box>
-            <NormalText text={description} />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 2,
+              maxWidth: 450,
+            }}
+          >
+            <Typography variant="bodytext">{description}</Typography>
             {readMore && (
               <Typography
-                variant="body2"
+                variant="boldbodytext"
                 component={Link}
                 to={redirectTo}
-                style={{ color: "black" }}
+                sx={{ color: "primary.main" }}
               >
                 {" "}
                 Read More
@@ -112,6 +110,6 @@ export const VerticalCard = (props) => {
           </Box>
         )}
       </VrCardContent>
-    </VrCard>
+    </Card>
   );
 };

@@ -1,8 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import { VerticalCard } from "../../components/Common/Cards/Vertical";
-import { CustomColor, SectionHeader } from "../../styles";
-import NormalText from "../../components/Common/BodyContent";
+import { PrimaryHeader } from "../../components/Common/Header";
+import BodyContainer from "../../components/Common/BodyContainer";
 
 const AppDevelopment = () => {
   const techs = [
@@ -40,66 +40,45 @@ const AppDevelopment = () => {
     },
   ];
   return (
-    <>
+    <BodyContainer>
+      <PrimaryHeader
+        title={[
+          { text: " AP", underline: true, noGap: true },
+          { text: "PLICATION DEVELOPMENT", underline: false },
+        ]}
+        margin={true}
+        subtitle="
+            Mobile app development is the act or process by which a mobile app is
+          developed for mobile devices, such as personal digital assistants,
+          enterprise digital assistants or mobile phones. These applications can
+          be pre-installed on phones during manufacturing."
+      />
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
-          gap: 0.5,
-          ml: { xs: 2, sm: 5 },
-          mt: 0,
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 2,
         }}
       >
-        <Typography sx={SectionHeader}>OUR SERVICES WILL HELP </Typography>
-
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Typography
-            sx={{
-              ...SectionHeader,
-              textDecorationLine: "underline",
-              textDecorationThickness: 5,
-              textDecorationColor: (theme) => theme.palette.primary.main,
-            }}
-          >
-            AP
-          </Typography>
-          <Typography sx={SectionHeader}>PLICATION DEVELOPMENT</Typography>
-        </Box>
-        <NormalText
-          text="Mobile app development is the act or process by which a mobile app is developed for mobile devices, 
-            such as personal digital assistants, enterprise digital assistants or mobile phones. 
-            These applications can be pre-installed on phones during manufacturing."
-        />
+        {techs.map((tech, index) => (
+          <VerticalCard
+            width={550}
+            height={450}
+            title={tech.name}
+            image={tech.image}
+            imgWidth={100}
+            imgHeight={100}
+            imgPath="services/service"
+            description={tech.description}
+            avatar={false}
+            readMore={tech.readMore}
+            redirectTo={`${tech.link}`}
+          />
+        ))}
       </Box>
-      <Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {techs.map((tech, index) => (
-            <VerticalCard
-              width={360}
-              height={440}
-              title={tech.name}
-              image={tech.image}
-              imgWidth={100}
-              imgHeight={100}
-              imgPath="services/service"
-              description={tech.description}
-              avatar={false}
-              readMore={tech.readMore}
-              bgColor="#50d8af"
-              color="white"
-              redirectTo={`/${tech.link}`}
-            />
-          ))}
-        </Box>
-      </Box>
-    </>
+    </BodyContainer>
   );
 };
 
