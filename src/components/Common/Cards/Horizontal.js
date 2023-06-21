@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const ImageDimensions = {
   width: 600,
-  height: 500,
+  height: 400,
 };
 //for use in products, Services description etc
 const CardContainer = styled(Box)(({ theme, reverse }) => ({
@@ -24,10 +24,11 @@ const CardContainer = styled(Box)(({ theme, reverse }) => ({
   },
 }));
 
-const CardDescription = styled(Box)(({ theme }) => ({
+const CardDescription = styled(Box)(({ theme, centerAligned }) => ({
   display: "flex",
   flexDirection: "column",
-  gap: 20,
+  justifyContent: centerAligned ? "center" : "flex-start",
+  gap: 10,
 }));
 
 export const HorizontalCard = (props) => {
@@ -39,6 +40,7 @@ export const HorizontalCard = (props) => {
     readMore,
     reverse,
     redirectTo,
+    centerAligned,
     children,
   } = props;
   function isObject(value) {
@@ -52,10 +54,10 @@ export const HorizontalCard = (props) => {
         width={ImageDimensions.width}
         height={ImageDimensions.height}
       />
-      <CardDescription>
+      <CardDescription centerAligned={centerAligned}>
         {children}
         {description && typeof description === "string" ? (
-          <Typography variant="body1">{description}</Typography>
+          <Typography variant="bodytext">{description}</Typography>
         ) : description && Array.isArray(description) ? (
           <ul>
             {description.map((text) => (
@@ -67,7 +69,9 @@ export const HorizontalCard = (props) => {
             {Object.keys(description).map((desc) => (
               <Box sx={{ display: "flex" }}>
                 {!hideKey && (
-                  <Typography sx={{ fontWeight: "bold" }}>{desc}</Typography>
+                  <Typography variant="bodytext" sx={{ fontWeight: "bold" }}>
+                    {desc}
+                  </Typography>
                 )}
                 <Typography variant="bodytext" style={{ marginBottom: 15 }}>
                   {description[desc]}
@@ -79,9 +83,15 @@ export const HorizontalCard = (props) => {
           ""
         )}
         {readMore && (
-          <Link to={redirectTo}>
-            <Button variant="contained">Read More</Button>
-          </Link>
+          <Typography
+            variant="boldbodytext"
+            component={Link}
+            to={redirectTo}
+            sx={{ color: "primary.main" }}
+          >
+            {" "}
+            Read More
+          </Typography>
         )}
       </CardDescription>
     </CardContainer>

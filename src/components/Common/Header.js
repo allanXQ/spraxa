@@ -9,14 +9,21 @@ const SecondaryHeader = ({ title, subtitle }) => {
   );
 };
 
-const PrimaryHeader = ({ title, maxWidth, margin, subtitle }) => {
+const PrimaryHeader = ({
+  title,
+  maxWidth,
+  margin,
+  subtitle,
+  noGap,
+  cardHeader,
+}) => {
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         flexWrap: "wrap",
-        gap: 1,
+        gap: !noGap && 1,
         ml: margin && { xs: 2, sm: 5 },
       }}
     >
@@ -48,16 +55,24 @@ const PrimaryHeader = ({ title, maxWidth, margin, subtitle }) => {
           </Typography>
         ))}
       </Box>
-      <Box>
+      <Box
+        sx={
+          cardHeader && {
+            maxWidth: 400,
+          }
+        }
+      >
         {subtitle && (
           <Typography
             variant="bodytext"
-            sx={{
-              color: "#616161",
-              fontWeight: 400,
-              lineHeight: "1.5rem",
-              mt: 1,
-            }}
+            sx={
+              cardHeader && {
+                color: "primary.main",
+                fontWeight: 600,
+                fontSize: "1.125rem",
+                lineHeight: "1.5rem",
+              }
+            }
           >
             {subtitle}
           </Typography>

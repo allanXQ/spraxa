@@ -70,7 +70,13 @@ const Jobs = () => {
     color: "secondary.icon",
   };
   return (
-    <Box>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 5,
+      }}
+    >
       <Box
         style={{
           display: "flex",
@@ -125,15 +131,21 @@ const Jobs = () => {
           );
         })}
       </Box>
-      <Box item>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          gap: 2,
+        }}
+      >
         <Button
           variant="contained"
           sx={{ width: 180, height: 50, color: "white" }}
         >
           Browse More Jobs
         </Button>
-      </Box>
-      <Box item>
         <Typography variant="h6" sx={{ color: "secondary.main" }}>
           Send your resume to{" "}
           <a href="mailto:careers@spraxa.com" style={{ fontSize: "16px" }}>

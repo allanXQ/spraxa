@@ -6,15 +6,6 @@ import BodyContainer from "../components/Common/BodyContainer";
 import { PrimaryHeader } from "../components/Common/Header";
 import SectionContainer from "../components/Common/SectionContainer";
 
-const Title = ({ name, title }) => {
-  return (
-    <Box>
-      <Typography>{name}</Typography>
-      <Typography>{title}</Typography>
-    </Box>
-  );
-};
-
 const About = () => {
   const Executives = [
     {
@@ -57,48 +48,54 @@ const About = () => {
               { text: "ECUTIVE", underline: false },
               { text: "LEADERSHIP", underline: false },
             ]}
+            cardHeader={true}
+            noGap={false}
             subtitle="We are ready to provide you the best services to do bussiness anywhere in the world."
           />
         </HorizontalCard>
       </SectionContainer>
       <SectionContainer>
-        <Box>
-          <PrimaryHeader
-            title={[
-              { text: "EXECUT", underline: false, noGap: true },
-              { text: "IV", underline: true, noGap: true },
-              { text: "E", underline: false },
-              { text: "LEADERSHIP", underline: false },
-            ]}
-            subtitle="Meet our professional and experienced team"
-          />
-          <Box
-            sx={(theme) => ({
-              display: "flex",
-              flexDirection: "column",
-              gap: 5,
-              justifyContent: "center",
-              alignItems: "center",
-              [`@media screen and (max-width: ${theme.breakpoints.values.md}px)`]:
-                {
-                  flexDirection: "column",
-                },
-            })}
-          >
-            {Executives.map((executive) => (
-              <HorizontalCard
-                key={executive.name}
-                width={500}
-                height={700}
-                image={executive.image}
-                imgPath="about"
-                description={executive.description}
-                readMore={false}
-              >
-                <Title name={executive.name} title={executive.position} />
-              </HorizontalCard>
-            ))}
-          </Box>
+        <PrimaryHeader
+          title={[
+            { text: "EXECUT", underline: false, noGap: true },
+            { text: "IV", underline: true, noGap: true },
+            { text: "E", underline: false },
+            { text: "LEADERSHIP", underline: false },
+          ]}
+          margin={true}
+          noGap={true}
+          subtitle="Meet our professional and experienced team"
+        />
+        <Box
+          sx={(theme) => ({
+            display: "flex",
+            flexDirection: "row",
+            gap: 5,
+            justifyContent: "center",
+            alignItems: "center",
+            [`@media screen and (max-width: ${theme.breakpoints.values.md}px)`]:
+              {
+                flexDirection: "column",
+              },
+          })}
+        >
+          {Executives.map((executive) => (
+            <VerticalCard
+              key={executive.name}
+              width={500}
+              height={700}
+              title={executive.name}
+              subtitle={executive.position}
+              image={executive.image}
+              imgWidth={400}
+              imgHeight={400}
+              imgPath="about"
+              description={executive.description}
+              avatar={false}
+              readMore={false}
+              disableHover={true}
+            />
+          ))}
         </Box>
       </SectionContainer>
       <SectionContainer>
@@ -109,7 +106,6 @@ const About = () => {
           description="We are a Microsoft certified partner and an IBM partner. Since, clients’ service is our priority, we find it extremely important to associate with other leading IT service companies, so that we can provide the best of the solutions. Spraxa remains a place of technological innovation and quality services, and it will continue to be the same through reliable associations."
           avatar={false}
           readMore={false}
-          reverse={true}
         >
           <PrimaryHeader
             title={[

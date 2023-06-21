@@ -7,7 +7,7 @@ const BodyContainer = ({ children }) => {
         mt: 0,
         display: "flex",
         flexDirection: "column",
-        gap: 5,
+        gap: 7,
       }}
     >
       {children}

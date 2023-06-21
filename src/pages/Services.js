@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import { VerticalCard } from "../components/Common/Cards/Vertical";
 import { PrimaryHeader } from "../components/Common/Header";
 import BodyContainer from "../components/Common/BodyContainer";
+import SectionContainer from "../components/Common/SectionContainer";
 
 const Services = () => {
   const Services = [
@@ -89,50 +90,52 @@ const Services = () => {
   ];
   return (
     <BodyContainer>
-      <PrimaryHeader
-        title={[
-          { text: "OUR ", underline: false },
-          { text: "SERVICES ", underline: false },
-          { text: "WILL", underline: false },
-          { text: "HELP", underline: false },
-          { text: "IM", underline: true, noGap: true },
-          { text: "PROVE", underline: false },
-          { text: "YOUR", underline: false },
-          { text: "BUSINESS", underline: false },
-        ]}
-        margin={true}
-        maxWidth={470}
-        subtitle="Our experts are able to find new growth opportunities in your business."
-      />
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 5,
-          flexWrap: "wrap",
-        }}
-      >
-        {Services.map((service, index) => (
-          <VerticalCard
-            key={index}
-            width={550}
-            height={450}
-            image={service.image}
-            imgPath="services"
-            imgWidth={200}
-            imgHeight={150}
-            avatar={false}
-            title={service.name}
-            subtitle={service.title}
-            description={service.description}
-            readMore={service.readMore}
-            redirectTo={`/services/${service.link}`}
-            color="#353535"
-            bgColor="#fff"
-          />
-        ))}
-      </Box>
+      <SectionContainer>
+        <PrimaryHeader
+          title={[
+            { text: "OUR ", underline: false },
+            { text: "SERVICES ", underline: false },
+            { text: "WILL", underline: false },
+            { text: "HELP", underline: false },
+            { text: "IM", underline: true, noGap: true },
+            { text: "PROVE", underline: false },
+            { text: "YOUR", underline: false },
+            { text: "BUSINESS", underline: false },
+          ]}
+          margin={true}
+          maxWidth={470}
+          subtitle="Our experts are able to find new growth opportunities in your business."
+        />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 5,
+            flexWrap: "wrap",
+          }}
+        >
+          {Services.map((service, index) => (
+            <VerticalCard
+              key={index}
+              width={550}
+              height={450}
+              image={service.image}
+              imgPath="services"
+              imgWidth={200}
+              imgHeight={150}
+              avatar={false}
+              title={service.name}
+              subtitle={service.title}
+              description={service.description}
+              readMore={service.readMore}
+              redirectTo={`/services/${service.link}`}
+              color="#353535"
+              bgColor="#fff"
+            />
+          ))}
+        </Box>
+      </SectionContainer>
     </BodyContainer>
   );
 };

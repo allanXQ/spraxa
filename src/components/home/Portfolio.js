@@ -63,7 +63,7 @@ const Portfolio = () => {
           alignItems: "center",
           justifyContent: "center",
           flexWrap: "wrap",
-          gap: 7,
+          gap: 9,
         }}
       >
         {Projects.map((project, index) => (

@@ -1,10 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import { HorizontalCard } from "../../components/Common/Cards/Horizontal";
+import SectionContainer from "../../components/Common/SectionContainer";
 
 const MobileApps = () => {
   return (
-    <Box
+    <SectionContainer
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <Typography
@@ -30,7 +31,7 @@ const MobileApps = () => {
           description="The popularity of mobile applications has risen tremendously. With the proliferation of high speed networks, smart phones and coupled with the fact that information needs to be available on the go, it has become very essential for software companies to have a mobile version of the application to complete their product offering in addition users always seek to make their lives simpler by accessing applications for information, utility, entertainment, etc."
         />
       </Box>
-    </Box>
+    </SectionContainer>
   );
 };
 

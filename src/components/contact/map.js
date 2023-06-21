@@ -23,7 +23,7 @@ const Map = () => {
         subtitle="We are located 2 minutes from kaushambi Metro Station and 5 minutes from Anand Vihar metro station / bus station."
       />
       <iframe
-        width="90%"
+        width="100%"
         height="500"
         id="gmap_canvas"
         src="https://maps.google.com/maps?q=spraxa%20solutions%20kaushambi%20&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"

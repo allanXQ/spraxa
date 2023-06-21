@@ -7,7 +7,7 @@ const SectionContainer = ({ margin, children }) => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: 1,
+        gap: 3,
         mx: margin && { xs: 2, sm: 5 },
       }}
     >

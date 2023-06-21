@@ -29,6 +29,7 @@ const Clients = () => {
       <Grid item style={{}}>
         <PrimaryHeader
           title={[
+            { text: "OUR ", underline: false },
             { text: "CLI ", underline: true, noGap: true },
             { text: "ENTS", underline: false },
           ]}

@@ -3,7 +3,7 @@ import {
   Box,
   Card,
   CardActionArea,
-  CardContent,
+  // CardContent,
   Typography,
   styled,
 } from "@mui/material";
@@ -11,7 +11,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //for use in testimonials, brief descriptions
-const VrCardContent = styled(CardContent)(({ theme }) => ({
+const CardContent = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -35,14 +35,12 @@ export const VerticalCard = (props) => {
     disableHover,
   } = props;
   return (
-    <Card
+    <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        // justifyContent: "center",
-        // gap: 1,
-        // margin: 10,
+        gap: 1,
         pt: 2,
         position: "relative",
         width: width,
@@ -73,7 +71,7 @@ export const VerticalCard = (props) => {
           }}
         />
       )}
-      <VrCardContent>
+      <CardContent>
         {title && (
           <Typography variant="h6" style={{ fontWeight: "bold" }}>
             {title}
@@ -92,7 +90,7 @@ export const VerticalCard = (props) => {
               alignItems: "center",
               justifyContent: "center",
               gap: 2,
-              maxWidth: 450,
+              maxWidth: 420,
             }}
           >
             <Typography variant="bodytext">{description}</Typography>
@@ -109,7 +107,7 @@ export const VerticalCard = (props) => {
             )}
           </Box>
         )}
-      </VrCardContent>
-    </Card>
+      </CardContent>
+    </Box>
   );
 };

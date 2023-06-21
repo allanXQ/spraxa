@@ -28,6 +28,8 @@ const Intro = () => {
           ]}
           margin={false}
           maxWidth={470}
+          cardHeader={true}
+          noGap={false}
           subtitle="We are a team of like-minded people who do business, understands the ideas and realize them."
         />
       </HorizontalCard>
