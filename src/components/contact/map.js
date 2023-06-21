@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import BodyText from "../Common/BodyContent";
 import { PrimaryHeader } from "../Common/Header";
 
 const Map = () => {
@@ -15,10 +14,10 @@ const Map = () => {
       <PrimaryHeader
         title={[
           { text: "FIND", underline: true },
-          { text: " US", underline: false },
-          { text: " ON", underline: false },
+          { text: "US", underline: false },
+          { text: "ON", underline: false },
           { text: "GOOGLE", underline: false },
-          { text: " MAPS", underline: false },
+          { text: "MAPS", underline: false },
         ]}
         margin={true}
         subtitle="We are located 2 minutes from kaushambi Metro Station and 5 minutes from Anand Vihar metro station / bus station."

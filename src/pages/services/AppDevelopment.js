@@ -43,7 +43,7 @@ const AppDevelopment = () => {
     <BodyContainer>
       <PrimaryHeader
         title={[
-          { text: " AP", underline: true, noGap: true },
+          { text: "AP", underline: true, noGap: true },
           { text: "PLICATION DEVELOPMENT", underline: false },
         ]}
         margin={true}

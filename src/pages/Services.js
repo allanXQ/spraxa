@@ -94,11 +94,11 @@ const Services = () => {
           { text: "OUR ", underline: false },
           { text: "SERVICES ", underline: false },
           { text: "WILL", underline: false },
-          { text: " HELP", underline: false },
-          { text: " IM", underline: true, noGap: true },
+          { text: "HELP", underline: false },
+          { text: "IM", underline: true, noGap: true },
           { text: "PROVE", underline: false },
-          { text: " YOUR", underline: false },
-          { text: " BUSINESS", underline: false },
+          { text: "YOUR", underline: false },
+          { text: "BUSINESS", underline: false },
         ]}
         margin={true}
         maxWidth={470}

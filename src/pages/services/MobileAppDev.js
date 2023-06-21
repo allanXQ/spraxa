@@ -89,7 +89,7 @@ const AppDevelopment = () => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <PrimaryHeader
             title={[
-              { text: " AP", underline: true, noGap: true },
+              { text: "AP", underline: true, noGap: true },
               { text: "PLICATION DEVELOPMENT", underline: false },
             ]}
             margin={true}

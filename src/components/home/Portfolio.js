@@ -1,7 +1,7 @@
-import { Typography, Grid, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import React from "react";
 import PortfolioCard from "../Common/PortfolioCard";
-import { PrimaryHeader, SecondaryHeader } from "../Common/Header";
+import { PrimaryHeader } from "../Common/Header";
 import SectionContainer from "../Common/SectionContainer";
 
 const Portfolio = () => {

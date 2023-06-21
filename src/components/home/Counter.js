@@ -23,8 +23,10 @@ const Counter = () => {
   return (
     <Grid
       container
-      style={{
-        backgroundImage: "url(/images/statsbg2.jpg)",
+      sx={{
+        backgroundImage: "url(/images/statsbg3.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",

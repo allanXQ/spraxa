@@ -8,74 +8,52 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import { CardSubtitle, SecondaryHeader } from "../../../styles";
 
+const ImageDimensions = {
+  width: 600,
+  height: 500,
+};
 //for use in products, Services description etc
-const StyledHrCard = styled(Card)(({ theme }) => ({
+const CardContainer = styled(Box)(({ theme, reverse }) => ({
   display: "flex",
   backgroundColor: "white",
-  // alignItems:'center',
-  margin: 10,
-  padding: 20,
+  gap: 40,
+  flexDirection: reverse ? "row-reverse" : "row",
   [`@media screen and (max-width: ${theme.breakpoints.values.md}px)`]: {
     flexDirection: "column",
   },
 }));
 
-const StyledHrCardContent = styled(CardContent)(({ theme }) => ({
+const CardDescription = styled(Box)(({ theme }) => ({
   display: "flex",
-  // alignItems:'center',
-  gap: 10,
+  flexDirection: "column",
+  gap: 20,
 }));
 
 export const HorizontalCard = (props) => {
   const {
     hideKey,
-    width,
-    height,
     image,
     imgPath,
-    title,
-    subtitle,
     description,
-    imgWidth,
-    imgHeight,
     readMore,
-    redirectTo,
     reverse,
+    redirectTo,
+    children,
   } = props;
   function isObject(value) {
     return typeof value === "object" && value !== null && !Array.isArray(value);
   }
   return (
-    <StyledHrCard
-      sx={{
-        width: width,
-        height: height,
-        gap: 5,
-        flexDirection: reverse ? "row-reverse" : "row",
-      }}
-    >
-      {
-        <img
-          src={imgPath ? `/images/${imgPath}/${image}` : `/images/${image}`}
-          alt={image.replace(/\.(png|jpe?g|svg)$/, "")}
-          style={{
-            imgWidth: imgWidth,
-            maxWidth: "600px",
-            height: imgHeight,
-            maxHeight: "700px",
-            objectFit: "contain",
-          }}
-        />
-      }
-      <StyledHrCardContent sx={{ flexDirection: "column" }}>
-        {title && <Typography style={SecondaryHeader}>{title}</Typography>}
-        {subtitle && (
-          <Typography style={{ ...CardSubtitle, maxWidth: 270 }}>
-            {subtitle}
-          </Typography>
-        )}
+    <CardContainer reverse={reverse}>
+      <img
+        src={imgPath ? `/images/${imgPath}/${image}` : `/images/${image}`}
+        alt={image?.replace(/\.(png|jpe?g|svg)$/, "")}
+        width={ImageDimensions.width}
+        height={ImageDimensions.height}
+      />
+      <CardDescription>
+        {children}
         {description && typeof description === "string" ? (
           <Typography variant="body1">{description}</Typography>
         ) : description && Array.isArray(description) ? (
@@ -105,7 +83,7 @@ export const HorizontalCard = (props) => {
             <Button variant="contained">Read More</Button>
           </Link>
         )}
-      </StyledHrCardContent>
-    </StyledHrCard>
+      </CardDescription>
+    </CardContainer>
   );
 };
