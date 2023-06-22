@@ -1,18 +1,16 @@
-import { Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
+
+const Root = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: 40,
+  [theme.breakpoints.down("md")]: {
+    marginTop: 20,
+  },
+}));
 
 const BodyContainer = ({ children }) => {
-  return (
-    <Box
-      sx={{
-        mt: 0,
-        display: "flex",
-        flexDirection: "column",
-        gap: 7,
-      }}
-    >
-      {children}
-    </Box>
-  );
+  return <Root>{children}</Root>;
 };
 
 export default BodyContainer;

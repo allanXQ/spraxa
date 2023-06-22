@@ -32,11 +32,14 @@ const ClientCard = () => {
   ];
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         backgroundColor: "white",
         width: 500,
         height: 400,
-      }}
+        [theme.breakpoints.down("md")]: {
+          width: 350,
+        },
+      })}
     >
       <Swiper
         modules={[Pagination, Autoplay, EffectCoverflow]}
@@ -66,7 +69,7 @@ const ClientCard = () => {
           <SwiperSlide key={testimonial.name}>
             <VerticalCard
               key={index}
-              width={500}
+              width="100%"
               height={400}
               avatar={true}
               readMore={false}

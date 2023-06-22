@@ -46,7 +46,8 @@ const AppDevelopment = () => {
         <PrimaryHeader
           title={[
             { text: "AP", underline: true, noGap: true },
-            { text: "PLICATION DEVELOPMENT", underline: false },
+            { text: "PLICATION ", underline: false },
+            { text: "DEVELOPMENT", underline: false },
           ]}
           margin={true}
           subtitle="
@@ -61,7 +62,7 @@ const AppDevelopment = () => {
             flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "center",
-            gap: 2,
+            gap: 5,
           }}
         >
           {techs.map((tech, index) => (

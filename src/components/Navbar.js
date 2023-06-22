@@ -11,6 +11,7 @@ import {
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import { ThemeConsumer } from "styled-components";
 
 const Navbar = () => {
   const pages = ["Home", "About", "Services", "Products", "Jobs", "Contact"];
@@ -21,7 +22,15 @@ const Navbar = () => {
   };
 
   const drawer = (
-    <div>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 5,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <List>
         {pages.map((page, index) => (
           <ListItem key={page} onClick={handleDrawerToggle}>
@@ -31,20 +40,31 @@ const Navbar = () => {
           </ListItem>
         ))}
       </List>
-    </div>
+    </Box>
   );
 
   return (
-    <AppBar sx={{ backgroundColor: "white" }}>
+    <AppBar
+      sx={{
+        backgroundColor: "white",
+        boxShadow: "none",
+      }}
+    >
       <Toolbar
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: (theme) =>
+            theme.breakpoints.up("md") ? "space-between" : "space-between",
           mt: "10px",
           mb: "10px",
         }}
       >
-        <Box sx={{ display: "flex", gap: 5 }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: (theme) => (theme.breakpoints.down("md") ? 2 : 5),
+          }}
+        >
           <img src="/images/logo.png" alt="logo" width={150} height={40} />
           <img src="/images/anniversary.png" alt="anniversary" width={60} />
         </Box>
@@ -60,7 +80,7 @@ const Navbar = () => {
           </IconButton>
         </Hidden>
 
-        <Hidden xsDown implementation="css">
+        <Hidden mdDown implementation="css">
           <Box sx={{ display: "flex", gap: 5 }} className="navbar">
             {pages.map((page) => (
               <NavLink to={`/${page.toLowerCase()}`} className="NavLink">
@@ -71,17 +91,21 @@ const Navbar = () => {
         </Hidden>
       </Toolbar>
 
-      <nav>
-        <Hidden smUp implementation="js">
-          <Drawer
-            variant="temporary"
-            open={drawerOpen}
-            onClose={handleDrawerToggle}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </nav>
+      <Hidden smUp implementation="js">
+        <Drawer
+          variant="temporary"
+          open={drawerOpen}
+          onClose={handleDrawerToggle}
+          sx={{
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: "40%",
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Hidden>
     </AppBar>
   );
 };

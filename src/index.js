@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: "Poppins",
     bodytext: {
@@ -29,7 +29,12 @@ const theme = createTheme({
       lineHeight: "3.375rem",
     },
     cardtitle: {},
-    cardsubtitle: {},
+    cardsubtitle: {
+      fontSize: "1.2rem",
+      color: "#616161",
+      fontWeight: 600,
+      lineHeight: "1.5rem",
+    },
   },
   palette: {
     primary: {
@@ -47,6 +52,8 @@ const theme = createTheme({
     },
   },
 });
+theme = responsiveFontSizes(theme);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

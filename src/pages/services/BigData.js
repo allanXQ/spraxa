@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import { HorizontalCard } from "../../components/Common/Cards/Horizontal";
+import BodyContainer from "../../components/Common/BodyContainer";
+import { SecondaryHeader } from "../../components/Common/Header";
+import SectionContainer from "../../components/Common/SectionContainer";
 
 const BigData = () => {
   const projects = [
@@ -31,21 +34,9 @@ const BigData = () => {
     },
   ];
   return (
-    <Box
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <Typography
-        sx={{
-          color: "secondary.main",
-          fontSize: "3rem",
-          fontWeight: "bold",
-          display: "flex",
-          alignSelf: "center",
-        }}
-      >
-        BIG DATA
-      </Typography>
-      <Box>
+    <BodyContainer>
+      <SectionContainer noGap={true}>
+        <SecondaryHeader title="BIG DATA" />"
         {projects.map((project, index) => (
           <HorizontalCard
             width={1250}
@@ -60,8 +51,8 @@ const BigData = () => {
             reverse={index % 2 !== 0}
           />
         ))}
-      </Box>
-    </Box>
+      </SectionContainer>
+    </BodyContainer>
   );
 };
 

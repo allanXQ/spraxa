@@ -1,25 +1,14 @@
 import React from "react";
-
 import { HorizontalCard } from "../../components/Common/Cards/Horizontal";
-import { Box, Typography } from "@mui/material";
+import { SecondaryHeader } from "../../components/Common/Header";
+import SectionContainer from "../../components/Common/SectionContainer";
+import BodyContainer from "../../components/Common/BodyContainer";
 
 const TechOverview = () => {
   return (
-    <Box
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <Typography
-        sx={{
-          color: "secondary.main",
-          fontSize: "3rem",
-          fontWeight: "bold",
-          display: "flex",
-          alignSelf: "center",
-        }}
-      >
-        THE BEST TECHNOLOGIES
-      </Typography>
-      <Box>
+    <BodyContainer>
+      <SectionContainer noGap={true}>
+        <SecondaryHeader title="THE BEST TEHCNOLOGIES" />"
         <HorizontalCard
           width={1250}
           height="auto"
@@ -36,8 +25,8 @@ const TechOverview = () => {
           }}
           hideKey={true}
         />
-      </Box>
-    </Box>
+      </SectionContainer>
+    </BodyContainer>
   );
 };
 

@@ -1,10 +1,10 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import React from "react";
 import { Pagination, Autoplay, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-import { PrimaryHeader, SecondaryHeader } from "../Common/Header";
+import { PrimaryHeader } from "../Common/Header";
 
 const importAllImages = (r) => {
   let images = [];
@@ -39,25 +39,29 @@ const Clients = () => {
       <Grid item style={{ overflow: "hidden", gap: 50 }}>
         <Swiper
           modules={[Pagination, Autoplay, EffectCoverflow]}
-          spaceBetween={50}
-          slidesPerView={3}
+          spaceBetween={20}
+          slidesPerView={1}
           loop={true}
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
           }}
           breakpoints={{
-            640: {
-              slidesPerView: 3,
+            300: {
+              slidesPerView: 1,
               spaceBetween: 20,
             },
-            768: {
-              slidesPerView: 4,
+            480: {
+              slidesPerView: 2,
               spaceBetween: 40,
             },
-            1024: {
-              slidesPerView: 5,
+            640: {
+              slidesPerView: 3,
               spaceBetween: 50,
+            },
+            900: {
+              slidesPerView: 5,
+              spaceBetween: 40,
             },
           }}
         >

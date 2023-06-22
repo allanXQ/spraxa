@@ -1,31 +1,34 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import React from "react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import ClientCard from "../Testimonial/ClientCard";
 import { Link } from "react-router-dom";
 
-const Testimonials = () => {
-  // <SecondaryHeader title='Testimonials'/>
+const MainCard = styled(Box)(({ theme }) => ({
+  display: "flex",
+  backgroundColor: theme.palette.primary.darkgreen,
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  height: "fit-content",
+  padding: "50px 0",
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+    gap: 20,
+  },
+}));
 
+const Testimonials = () => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "primary.darkgreen",
-        display: "flex",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        height: 500,
-      }}
-    >
+    <MainCard sx={(theme) => ({})}>
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "column",
           gap: 1,
           maxWidth: 500,
           flexWrap: "wrap",
-        }}
+        })}
       >
         <Typography
           sx={{
@@ -75,7 +78,7 @@ const Testimonials = () => {
         </Typography>
       </Box>
       <ClientCard />
-    </Box>
+    </MainCard>
   );
 };
 

@@ -19,7 +19,7 @@ const CardContainer = styled(Box)(({ theme, reverse }) => ({
   backgroundColor: "white",
   gap: 40,
   flexDirection: reverse ? "row-reverse" : "row",
-  [`@media screen and (max-width: ${theme.breakpoints.values.md}px)`]: {
+  [theme.breakpoints.down("md")]: {
     flexDirection: "column",
   },
 }));
@@ -29,6 +29,19 @@ const CardDescription = styled(Box)(({ theme, centerAligned }) => ({
   flexDirection: "column",
   justifyContent: centerAligned ? "center" : "flex-start",
   gap: 10,
+  [theme.breakpoints.down("md")]: {
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+}));
+
+const Image = styled("img")(({ theme }) => ({
+  width: ImageDimensions.width,
+  height: ImageDimensions.height,
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
+    height: "auto",
+  },
 }));
 
 export const HorizontalCard = (props) => {
@@ -42,13 +55,14 @@ export const HorizontalCard = (props) => {
     redirectTo,
     centerAligned,
     children,
+    ActionArea,
   } = props;
   function isObject(value) {
     return typeof value === "object" && value !== null && !Array.isArray(value);
   }
   return (
     <CardContainer reverse={reverse}>
-      <img
+      <Image
         src={imgPath ? `/images/${imgPath}/${image}` : `/images/${image}`}
         alt={image?.replace(/\.(png|jpe?g|svg)$/, "")}
         width={ImageDimensions.width}
@@ -82,6 +96,7 @@ export const HorizontalCard = (props) => {
         ) : (
           ""
         )}
+        {ActionArea && <ActionArea />}
         {readMore && (
           <Typography
             variant="boldbodytext"

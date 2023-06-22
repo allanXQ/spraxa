@@ -1,20 +1,17 @@
-import {
-  Avatar,
-  Box,
-  Card,
-  CardActionArea,
-  // CardContent,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Avatar, Box, Card, Typography, styled } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
 //for use in testimonials, brief descriptions
-const CardContent = styled(Box)(({ theme }) => ({
+const Content = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  display: "flex",
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: 5,
 }));
 export const VerticalCard = (props) => {
   const {
@@ -33,25 +30,30 @@ export const VerticalCard = (props) => {
     readMore,
     redirectTo,
     disableHover,
+    hideboxShadow,
   } = props;
   return (
-    <Box
-      sx={{
+    <Card
+      sx={(theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         gap: 1,
-        pt: 2,
+        py: 2,
         position: "relative",
         width: width,
         height: height,
-        backgroundColor: bgColor ? bgColor : "white",
+        backgroundColor: bgColor ? bgColor : "#fcfcfc",
         color: color ? color : "black",
         boxShadow: "0px 0px 8px 0px rgba(0,0,0,0.3)",
+        [theme.breakpoints.down("sm")]: {
+          maxWidth: 350,
+        },
+
         "&:hover": disableHover
           ? null
           : { transform: "scale3d(1.02, 1.02, 1)" },
-      }}
+      })}
     >
       {avatar ? (
         <Avatar
@@ -71,9 +73,14 @@ export const VerticalCard = (props) => {
           }}
         />
       )}
-      <CardContent>
+      <Content>
         {title && (
-          <Typography variant="h6" style={{ fontWeight: "bold" }}>
+          <Typography
+            variant="h6"
+            style={{
+              fontWeight: "bold",
+            }}
+          >
             {title}
           </Typography>
         )}
@@ -84,14 +91,18 @@ export const VerticalCard = (props) => {
         )}
         {description && (
           <Box
-            sx={{
+            sx={(theme) => ({
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
+              boxShadow: "none",
               gap: 2,
               maxWidth: 420,
-            }}
+              [theme.breakpoints.down("sm")]: {
+                maxWidth: 300,
+              },
+            })}
           >
             <Typography variant="bodytext">{description}</Typography>
             {readMore && (
@@ -107,7 +118,7 @@ export const VerticalCard = (props) => {
             )}
           </Box>
         )}
-      </CardContent>
-    </Box>
+      </Content>
+    </Card>
   );
 };

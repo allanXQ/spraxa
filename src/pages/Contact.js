@@ -5,7 +5,6 @@ import MailIcon from "@mui/icons-material/Mail";
 import facebook from "../images/social/facebook.png";
 import twitter from "../images/social/twitter.png";
 import linkedIn from "../images/social/linkedin.png";
-import { SectionGap } from "../styles";
 import Map from "../components/contact/map";
 import { PrimaryHeader } from "../components/Common/Header";
 import BodyContainer from "../components/Common/BodyContainer";

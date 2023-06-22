@@ -130,8 +130,6 @@ const Services = () => {
               description={service.description}
               readMore={service.readMore}
               redirectTo={`/services/${service.link}`}
-              color="#353535"
-              bgColor="#fff"
             />
           ))}
         </Box>

@@ -19,27 +19,35 @@ const PrimaryHeader = ({
 }) => {
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         display: "flex",
         flexDirection: "column",
         flexWrap: "wrap",
         gap: !noGap && 1,
-        ml: margin && { xs: 2, sm: 5 },
-      }}
+        ml: margin && 5,
+        [theme.breakpoints.down("sm")]: {
+          marginLeft: 0,
+          alignItems: "center",
+          gap: 0.5,
+        },
+      })}
     >
       <Box
-        sx={{
+        sx={(theme) => ({
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
-          maxWidth,
-        }}
+          maxWidth: maxWidth && maxWidth,
+          [theme.breakpoints.down("sm")]: {
+            justifyContent: "center",
+          },
+        })}
       >
         {title.map((word, index) => (
           <Typography
             key={index}
             variant="sectionheading"
-            sx={{
+            sx={(theme) => ({
               color: "#0c2e8a",
               letterSpacing: "1px",
               lineHeight: "3.125rem",
@@ -49,7 +57,11 @@ const PrimaryHeader = ({
                 word.underline ? theme.palette.primary.main : "inherit",
               textDecorationThickness: word.underline ? 5 : "auto",
               marginRight: word.noGap ? 0 : 1.2,
-            }}
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "2rem",
+                lineHeight: "2.3rem",
+              },
+            })}
           >
             {word.text}
           </Typography>
@@ -65,14 +77,18 @@ const PrimaryHeader = ({
         {subtitle && (
           <Typography
             variant="bodytext"
-            sx={
-              cardHeader && {
-                color: "primary.main",
-                fontWeight: 600,
-                fontSize: "1.125rem",
-                lineHeight: "1.5rem",
-              }
-            }
+            sx={(theme) => ({
+              color: cardHeader && "primary.main",
+              fontWeight: cardHeader && 600,
+              lineHeight: cardHeader && "1.5rem",
+              [theme.breakpoints.down("sm")]: {
+                display: "flex",
+                // alignItems: "center",
+                flexWrap: "wrap",
+                paddingLeft: !cardHeader && 2,
+                paddingRight: !cardHeader && 2,
+              },
+            })}
           >
             {subtitle}
           </Typography>
