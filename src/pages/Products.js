@@ -32,7 +32,7 @@ const Products = () => {
 
     {
       name: "Shikhar App",
-      image: "shikhar.PNG",
+      image: "Shikhar.PNG",
       description:
         "This online application can help you to enter your petty expenses with attaching the receipts.",
     },
